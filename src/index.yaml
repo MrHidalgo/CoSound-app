@@ -1,0 +1,6 @@
+ProjectTitle: CoSound Mobile App
+
+PageList:
+- file: card.html
+  titleName: Card
+  ready: 1
