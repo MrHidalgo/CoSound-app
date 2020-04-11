@@ -1,7 +1,7 @@
 // SECTION :: START
 
 .card {
-	height: calc(100vh - 55px);
+	height: calc(100vh - 80px);
 
 	&__carousel {
 		overflow: hidden;
@@ -10,7 +10,9 @@
 		height: 100%;
 
 		&.is-touchMove {
-			&:after,
+			&:after {
+				// add translateY/X
+			}
 			&:before {
 				opacity: 1;
 				visibility: visible;
