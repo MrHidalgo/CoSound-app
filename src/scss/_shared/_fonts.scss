@@ -65,14 +65,14 @@
 /// ===============
 //@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 
-@include mixinFontFace("SF Pro Display", "-Thin", "../fonts/", 100, woff2 woff ttf svg);
-@include mixinFontFace("SF Pro Display", "-Ultralight", "../fonts/", 200, woff2 woff ttf svg);
-@include mixinFontFace("SF Pro Display", "-Medium", "../fonts/", 500, woff2 woff ttf svg);
-@include mixinFontFace("SF Pro Display", "-Light", "../fonts/", 200, woff2 woff ttf svg);
-@include mixinFontFace("SF Pro Display", "-Heavy", "../fonts/", 900, woff2 woff ttf svg);
-@include mixinFontFace("SF Pro Display", "-Semibold", "../fonts/", 600, woff2 woff ttf svg);
-@include mixinFontFace("SF Pro Display", "-Bold", "../fonts/", bold, woff2 woff ttf svg);
-@include mixinFontFace("SF Pro Display", "-Regular", "../fonts/", normal, woff2 woff ttf svg);
+@include mixinFontFace("SFProDisplay", "-Thin", "../fonts/", 100, woff2 woff ttf svg);
+@include mixinFontFace("SFProDisplay", "-Ultralight", "../fonts/", 200, woff2 woff ttf svg);
+@include mixinFontFace("SFProDisplay", "-Medium", "../fonts/", 500, woff2 woff ttf svg);
+@include mixinFontFace("SFProDisplay", "-Light", "../fonts/", 200, woff2 woff ttf svg);
+@include mixinFontFace("SFProDisplay", "-Heavy", "../fonts/", 900, woff2 woff ttf svg);
+@include mixinFontFace("SFProDisplay", "-Semibold", "../fonts/", 600, woff2 woff ttf svg);
+@include mixinFontFace("SFProDisplay", "-Bold", "../fonts/", bold, woff2 woff ttf svg);
+@include mixinFontFace("SFProDisplay", "-Regular", "../fonts/", normal, woff2 woff ttf svg);
 
 @include mixinFontFace("AndaleMonoMTStd", "", "../fonts/", normal, woff2 woff ttf svg);
-@include mixinFontFace("AndaleMonoMTStd", "-Bold", "../fonts/", normal, woff2 woff ttf svg);
+@include mixinFontFace("AndaleMonoMTStd-Bold", "", "../fonts/", normal, woff2 woff ttf svg);

@@ -20,6 +20,41 @@ var initPreventBehavior = function initPreventBehavior() {
 };
 
 /**
+ * @name initSwiper
+ *
+ * @description initialize Swiper
+ */
+var initSwiper = function initSwiper() {
+
+	var cardSwiper = new Swiper('.cardCarousel', {
+		direction: 'vertical',
+		loop: false,
+		grabCursor: true,
+		freeMode: false,
+		speed: 800,
+		effect: 'coverflow',
+		coverflowEffect: {
+			rotate: 0,
+			stretch: 80,
+			depth: 200,
+			modifier: 1,
+			slideShadows: false
+		},
+		centeredSlides: true,
+		slidesPerView: 'auto',
+		spaceBetween: 30,
+		on: {
+			"touchMove": function touchMove() {
+				$(this.wrapperEl).closest('.card__carousel').addClass('is-touchMove');
+			},
+			"touchEnd": function touchEnd() {
+				$(this.wrapperEl).closest('.card__carousel').removeClass('is-touchMove');
+			}
+		}
+	});
+};
+
+/**
  * @description Document DOM ready.
  */
 (function () {
@@ -48,6 +83,7 @@ var initPreventBehavior = function initPreventBehavior() {
 		// ==========================================
 
 		// lib
+		initSwiper();
 		// ==========================================
 
 		// callback

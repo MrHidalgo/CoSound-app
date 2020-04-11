@@ -1,0 +1,242 @@
+// SECTION :: START
+
+.card {
+	height: calc(100vh - (59px + 31px));
+	padding-bottom: 39px;
+
+	&__carousel {
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		height: 100%;
+
+		&.is-touchMove {
+			&:after {
+				opacity: 1;
+				visibility: visible;
+				@include transition(opacity, visibility);
+			}
+		}
+
+		&:after {
+			opacity: 0;
+			visibility: hidden;
+			content: '';
+			z-index: 10;
+			position: absolute;
+			left: -22px;
+			bottom: -(201px - 91px);
+			width: calc(100% + 44px);
+			height: 201px;
+			background-image: linear-gradient(180deg, rgba(25,25,25,0.00) 11%, #191919 43%);
+			@include transition(opacity, visibility);
+		}
+	}
+
+	&__box {
+		overflow: hidden;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		margin-top: auto;
+		border-radius: 6px;
+		border: 1px solid #979797;
+		background-color: #191919;
+
+		&-header {
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+			min-height: 100px;
+			height: 357px;
+
+			&--image {
+				&:after {
+					content: '';
+					z-index: 10;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-image: linear-gradient(179deg, rgba(25,25,25,0.00) 25%, #191919 98%);
+				}
+
+				img {
+					@extend %imageResCoverAbs;
+				}
+			}
+
+			&--audio {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				img {
+					display: block;
+					max-width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		&-body {
+			padding: 25px 30px 35px;
+		}
+
+		&-title {
+			padding-bottom: 19px;
+			font-family: "AndaleMonoMTStd-Bold", sans-serif;
+			font-size: 22px;
+			color: #F0AF36;
+			letter-spacing: 0.47px;
+			line-height: 24px;
+		}
+
+		&-info {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			min-height: 35px;
+			padding-top: 5px;
+			border-top: 1px solid rgba(#979797, 0.1);
+			border-bottom: 1px solid rgba(#979797, 0.1);
+
+			i {
+				position: relative;
+				top: -1px;
+				width: 5px;
+				height: 5px;
+				margin-left: 10px;
+				margin-right: 10px;
+				margin-bottom: 5px;
+				border-radius: 50%;
+				background-color: #a9a9b0;
+			}
+
+			span {
+				position: relative;
+				top: -1px;
+				line-height: 1;
+				font-size: 12px;
+				color: #A9A9B0;
+				padding-bottom: 5px;
+			}
+		}
+
+		&-user {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-top: 25px;
+			padding-bottom: 25px;
+
+			> div {
+				&:nth-of-type(1) {
+					flex: 1;
+					min-width: 1px;
+					max-width: 100%;
+					padding-right: 15px;
+				}
+			}
+
+			&-details {
+				display: flex;
+				align-items: center;
+
+				> div {
+					&:nth-of-type(1) {
+						padding-right: 10px;
+					}
+					&:nth-of-type(2) {
+						flex: 1;
+						min-width: 1px;
+						max-width: 100%;
+					}
+				}
+
+				p {
+					font-size: 16px;
+					color: #FFFFFF;
+				}
+
+				span {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					font-size: 12px;
+					color: #A9A9B0;
+
+					.icon-font {
+						margin-right: 5px;
+						color: #f9ac21;
+						font-size: 11px;
+					}
+				}
+			}
+
+			&-ava {
+				overflow: hidden;
+				position: relative;
+				width: 45px;
+				height: 45px;
+				border-radius: 50%;
+
+				img {
+					@extend %imageResCoverAbs;
+				}
+			}
+
+			&-btn {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 87px;
+				height: 36px;
+				border-radius: 20px;
+				background-color: #3759F0;
+
+				span {
+					position: relative;
+					top: 2px;
+					text-transform: lowercase;
+					font-family: "AndaleMonoMTStd-Bold", sans-serif;
+					font-size: 12px;
+					color: #FFFFFF;
+					letter-spacing: 0;
+					text-align: left;
+				}
+			}
+		}
+
+		&-desc {
+			padding-bottom: 25px;
+
+			p {
+				overflow: hidden;
+				position: relative;
+				max-height: 72px;
+				font-size: 12px;
+				color: #A9A9B0;
+				line-height: 18px;
+			}
+		}
+
+		&-link {
+			font-family: 'AndaleMonoMTStd-Bold', sans-serif;
+			font-size: 12px;
+			color: #3554F9;
+			line-height: 18px;
+		}
+	}
+
+	.swiper {
+		&-slide {
+
+		}
+	}
+}
+
+// SECTION :: END

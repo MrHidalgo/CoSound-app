@@ -1,7 +1,57 @@
 // SECTION :: START
 
-section#section.section
+mixin cardBox(classMod, title)
+	a.card__box(href="#" class!= 'card__box--' + classMod)
+		.card__box-header(class!= 'card__box-header--' + classMod)
+			if(classMod === 'image')
+				img(src="img/img-card-image.png" srcset="img/img-card-image@2x.png 2x" alt="")
 
-	.section__wrapper
+			if(classMod === 'audio')
+				img(src="img/img-card-audio.svg" alt="")
+
+		.card__box-body
+			p.card__box-title!= title
+
+			.card__box-info
+				span London, UK
+				i
+				span 2h ago
+
+			.card__box-user
+				div
+					.card__box-user-details
+						div
+							.card__box-user-ava
+								img(src="img/img-user.jpg" srcset='img/img-user@2x.jpg 2x' alt="")
+						div
+							p Keith Mills
+							span!= "<i class='icon-font icon-arrow-right'></i> Top Contributor"
+				div
+					.card__box-user-btn
+						span Open
+
+			.card__box-desc
+				p A couple of people have told me that this mix is too muddy at the moment? Any pro-tips on how to change that? Any plugins I can use? I’m currently using Logic Pro for all my work. But really struggling to seperate out the bass sounds.
+
+			.card__box-link 15 comments
+
+section#card.card
+
+	.card__carousel
+		mixin swiperContent()
+			.swiper-slide
+				+cardBox('image', 'Finished track from the new studio')
+			.swiper-slide
+				+cardBox('audio', 'Looking for some feedback on a mix')
+			.swiper-slide
+				+cardBox('image', 'Finished track from the new studio')
+			.swiper-slide
+				+cardBox('audio', 'Looking for some feedback on a mix')
+			.swiper-slide
+				+cardBox('image', 'Finished track from the new studio')
+			.swiper-slide
+				+cardBox('audio', 'Looking for some feedback on a mix')
+
+		+swiper('cardCarousel', 'swiperContent', false, false, false)
 
 // SECTION :: END
