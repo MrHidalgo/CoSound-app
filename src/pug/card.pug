@@ -1,9 +1,12 @@
 ---
-title: CoSound Mobile App
+title: CoSound Mobile App | Card
 
 pageClassName: p-card
 ---
 extends shared/_layout
 
+block header
 block content
-  div(class!= pageClassName)
+	div(class!= pageClassName)
+
+		include components/card/_card

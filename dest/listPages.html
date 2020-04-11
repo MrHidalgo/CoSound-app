@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title><%= pages.ProjectTitle %></title>
+  <title>CoSound Mobile App</title>
 
   <link rel="apple-touch-icon" sizes="60x60" href="./icon/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="./icon/apple-icon-72x72.png">
@@ -528,20 +528,13 @@
 <!-- content -->
 <header class="header">
   <!--<h1>-->
-  <!--<span><%= pages.ProjectTitle %></span>-->
+  <!--<span>CoSound Mobile App</span>-->
   <!--</h1>-->
-  <%
-  date = new Date(_.now());
-  if(date.getMonth()+1<10){ month = '0' + (date.getMonth()+1);}
-  else{ month = date.getMonth()+1; }
-
-  if(date.getDate()<10){ day = '0' + (date.getDate());}
-  else{ day = date.getDate(); }
-  %>
+  
   <div class="header__updated">
-    <em><%= pages.ProjectTitle %></em> -
-    updated <strong><%= day %>.<%= month %>.<%= date.getFullYear() %></strong>
-    <!--, <%= pages.PageList.length %> pages-->
+    <em>CoSound Mobile App</em> -
+    updated <strong>11.04.2020</strong>
+    <!--, 1 pages-->
   </div>
 
   <nav class="types">
@@ -591,25 +584,25 @@
 </header>
 <section>
   <ol class="pagelist">
-    <% i = 0;%>
-    <% _.each(pages.PageList, function(page) { i++; %>
+    
+    
     <li
-    <% if(!page.ready) { %> class="is-notready" <% } %>
+    
     >
 
     <a
-      class="pagelist__title <% if(i==1){ %> is-active <% } %>"
+      class="pagelist__title  is-active "
       target="_blank"
-      href="<%= page.file %>"
+      href="card.html"
     >
-      <!--<span><%= i %>.</span>-->
-      <% if(!page.ready) { i--; } %>
-      <% if(page.ready) { %> <span><%= i %>.</span> <% } %>
+      <!--<span>1.</span>-->
+      
+       <span>1.</span> 
 
-      <em><%= _.split(page.titleName, '.', 1) %></em>
+      <em>Card</em>
     </a>
 
-    <a href="<%= page.file %>" class="pagelist__url" target="_blank">
+    <a href="card.html" class="pagelist__url" target="_blank">
       <svg class="icon icon-link">
         <use xlink:href="#icon-link"></use>
       </svg>
@@ -617,39 +610,39 @@
 
     <p class="pagelist__filename">
       <span class="pagelist__filename--progress">
-        <% if(page.ready < 95) { %> -= IN PROGRESS <% } %>
+         -= IN PROGRESS 
       </span>
       <span class="pagelist__filename--testing">
-        <% if(page.ready > 75 && page.ready < 95) { %> - AWAITING TESTING - review =- <% } %>
+        
       </span>
       <span class="pagelist__filename--developing">
-        <% if(page.ready >= 1 && page.ready < 55) { %> - IN DEVELOPING - desktop view =- <% } %>
+         - IN DEVELOPING - desktop view =- 
       </span>
       <span class="pagelist__filename--developing">
-        <% if(page.ready >= 55 && page.ready <= 75) { %> - IN DEVELOPING - mobile view =- <% } %>
+        
       </span>
       <span class="pagelist__filename--finished">
-        <% if(page.ready >= 95) { %> -= FINISHED PAGES =- <% } %>
+        
       </span>
     </p>
 
-    <div class="pagelist__progress <% if(page.ready >= 95){ %> pagelist__progress--finished <% } %>">
-      <% if(!page.ready) page.ready = 0; %>
+    <div class="pagelist__progress ">
+      
       <div>
-        <span><%= page.ready %>%</span>
+        <span>1%</span>
       </div>
       <div>
-        <i style="width:<%= page.ready %>%"></i>
+        <i style="width:1%"></i>
       </div>
     </div>
 
     </li>
-    <% }) %>
+    
   </ol>
 </section>
 
 <aside class="preview" id="preview-wrapper">
-  <iframe id="preview" width="414" height="600" src="<%= pages.PageList[0].file %>" frameborder="0"></iframe>
+  <iframe id="preview" width="414" height="600" src="card.html" frameborder="0"></iframe>
 </aside>
 
 
