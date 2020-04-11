@@ -8,8 +8,8 @@
 	* ============================================= */
 	const footerBtnToggle = () => {
 		$('[footer-toggle-js]').on('click', (ev) => {
-			// $('[footer-toggle-js]').removeClass('is-active');
-			// $(ev.currentTarget).addClass('is-active');
+			$('[footer-toggle-js]').removeClass('is-active');
+			$(ev.currentTarget).addClass('is-active');
 		});
 	};
 	/*
@@ -32,6 +32,7 @@
 		// ==========================================
 
 		// callback
+		// fullViewHeight();
 		footerBtnToggle();
 		// ==========================================
 	};

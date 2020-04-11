@@ -157,7 +157,7 @@ body {
   width: 100%;
   max-width: 767px;
   margin: 0 auto;
-  padding: 31px 22px 59px;
+  padding: 0 20px 55px;
   background-color: #191919;
   line-height: 1.42857143;
   font-size: 14px;
@@ -331,8 +331,8 @@ picture {
   left: 0;
   bottom: 0;
   width: 100%;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: #191919;
 }
 
@@ -342,7 +342,7 @@ picture {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 59px;
+  height: 55px;
 }
 
 /* line 18, src/scss/_components/_footer.scss */
@@ -393,12 +393,11 @@ picture {
 
 /* line 3, src/scss/_components/card/_card.scss */
 .card {
-  height: -webkit-calc(100vh - (59px + 31px));
-  height: calc(100vh - (59px + 31px));
-  padding-bottom: 39px;
+  height: -webkit-calc(100vh - 55px);
+  height: calc(100vh - 55px);
 }
 
-/* line 7, src/scss/_components/card/_card.scss */
+/* line 6, src/scss/_components/card/_card.scss */
 .card__carousel {
   overflow: hidden;
   position: relative;
@@ -409,8 +408,8 @@ picture {
   height: 100%;
 }
 
-/* line 14, src/scss/_components/card/_card.scss */
-.card__carousel.is-touchMove:after {
+/* line 13, src/scss/_components/card/_card.scss */
+.card__carousel.is-touchMove:after, .card__carousel.is-touchMove:before {
   opacity: 1;
   visibility: visible;
   -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
@@ -419,30 +418,40 @@ picture {
 }
 
 /* line 21, src/scss/_components/card/_card.scss */
-.card__carousel:after {
-  opacity: 0;
-  visibility: hidden;
+.card__carousel:after, .card__carousel:before {
   content: '';
   z-index: 10;
   position: absolute;
   left: -22px;
-  bottom: -110px;
   width: -webkit-calc(100% + 44px);
   width: calc(100% + 44px);
-  height: 201px;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(11%, rgba(25, 25, 25, 0)), color-stop(43%, #191919));
-  background-image: -webkit-linear-gradient(top, rgba(25, 25, 25, 0) 11%, #191919 43%);
-  background-image: -o-linear-gradient(top, rgba(25, 25, 25, 0) 11%, #191919 43%);
-  background-image: linear-gradient(180deg, rgba(25, 25, 25, 0) 11%, #191919 43%);
+  height: 80px;
   -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 }
 
-/* line 36, src/scss/_components/card/_card.scss */
+/* line 34, src/scss/_components/card/_card.scss */
+.card__carousel:before {
+  top: -55px;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(25, 25, 25, 0)), color-stop(40%, #191919));
+  background-image: -webkit-linear-gradient(bottom, rgba(25, 25, 25, 0) 0%, #191919 40%);
+  background-image: -o-linear-gradient(bottom, rgba(25, 25, 25, 0) 0%, #191919 40%);
+  background-image: linear-gradient(360deg, rgba(25, 25, 25, 0) 0%, #191919 40%);
+}
+
+/* line 39, src/scss/_components/card/_card.scss */
+.card__carousel:after {
+  bottom: -55px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 25, 25, 0)), color-stop(40%, #191919));
+  background-image: -webkit-linear-gradient(top, rgba(25, 25, 25, 0) 0%, #191919 40%);
+  background-image: -o-linear-gradient(top, rgba(25, 25, 25, 0) 0%, #191919 40%);
+  background-image: linear-gradient(180deg, rgba(25, 25, 25, 0) 0%, #191919 40%);
+}
+
+/* line 45, src/scss/_components/card/_card.scss */
 .card__box {
   overflow: hidden;
-  overflow-y: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -461,7 +470,7 @@ picture {
   background-color: #191919;
 }
 
-/* line 48, src/scss/_components/card/_card.scss */
+/* line 56, src/scss/_components/card/_card.scss */
 .card__box-header {
   overflow: hidden;
   position: relative;
@@ -470,7 +479,7 @@ picture {
   height: 357px;
 }
 
-/* line 56, src/scss/_components/card/_card.scss */
+/* line 64, src/scss/_components/card/_card.scss */
 .card__box-header--image:after {
   content: '';
   z-index: 10;
@@ -484,7 +493,7 @@ picture {
   background-image: linear-gradient(179deg, rgba(25, 25, 25, 0) 25%, #191919 98%);
 }
 
-/* line 72, src/scss/_components/card/_card.scss */
+/* line 80, src/scss/_components/card/_card.scss */
 .card__box-header--audio {
   display: -webkit-box;
   display: -webkit-flex;
@@ -500,19 +509,20 @@ picture {
           justify-content: center;
 }
 
-/* line 77, src/scss/_components/card/_card.scss */
+/* line 85, src/scss/_components/card/_card.scss */
 .card__box-header--audio img {
   display: block;
   max-width: 100%;
   height: auto;
+  max-height: 100%;
 }
 
-/* line 85, src/scss/_components/card/_card.scss */
+/* line 94, src/scss/_components/card/_card.scss */
 .card__box-body {
   padding: 25px 30px 35px;
 }
 
-/* line 89, src/scss/_components/card/_card.scss */
+/* line 98, src/scss/_components/card/_card.scss */
 .card__box-title {
   padding-bottom: 19px;
   font-family: "AndaleMonoMTStd-Bold", sans-serif;
@@ -522,7 +532,7 @@ picture {
   line-height: 24px;
 }
 
-/* line 98, src/scss/_components/card/_card.scss */
+/* line 107, src/scss/_components/card/_card.scss */
 .card__box-info {
   display: -webkit-box;
   display: -webkit-flex;
@@ -541,7 +551,7 @@ picture {
   border-bottom: 1px solid rgba(151, 151, 151, 0.1);
 }
 
-/* line 107, src/scss/_components/card/_card.scss */
+/* line 116, src/scss/_components/card/_card.scss */
 .card__box-info i {
   position: relative;
   top: -1px;
@@ -555,7 +565,7 @@ picture {
   background-color: #a9a9b0;
 }
 
-/* line 119, src/scss/_components/card/_card.scss */
+/* line 128, src/scss/_components/card/_card.scss */
 .card__box-info span {
   position: relative;
   top: -1px;
@@ -565,7 +575,7 @@ picture {
   padding-bottom: 5px;
 }
 
-/* line 129, src/scss/_components/card/_card.scss */
+/* line 138, src/scss/_components/card/_card.scss */
 .card__box-user {
   display: -webkit-box;
   display: -webkit-flex;
@@ -583,7 +593,7 @@ picture {
   padding-bottom: 25px;
 }
 
-/* line 137, src/scss/_components/card/_card.scss */
+/* line 146, src/scss/_components/card/_card.scss */
 .card__box-user > div:nth-of-type(1) {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -594,7 +604,7 @@ picture {
   padding-right: 15px;
 }
 
-/* line 145, src/scss/_components/card/_card.scss */
+/* line 154, src/scss/_components/card/_card.scss */
 .card__box-user-details {
   display: -webkit-box;
   display: -webkit-flex;
@@ -606,12 +616,12 @@ picture {
           align-items: center;
 }
 
-/* line 150, src/scss/_components/card/_card.scss */
+/* line 159, src/scss/_components/card/_card.scss */
 .card__box-user-details > div:nth-of-type(1) {
   padding-right: 10px;
 }
 
-/* line 153, src/scss/_components/card/_card.scss */
+/* line 162, src/scss/_components/card/_card.scss */
 .card__box-user-details > div:nth-of-type(2) {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -621,13 +631,13 @@ picture {
   max-width: 100%;
 }
 
-/* line 160, src/scss/_components/card/_card.scss */
+/* line 169, src/scss/_components/card/_card.scss */
 .card__box-user-details p {
   font-size: 16px;
   color: #FFFFFF;
 }
 
-/* line 165, src/scss/_components/card/_card.scss */
+/* line 174, src/scss/_components/card/_card.scss */
 .card__box-user-details span {
   display: -webkit-box;
   display: -webkit-flex;
@@ -644,14 +654,14 @@ picture {
   color: #A9A9B0;
 }
 
-/* line 172, src/scss/_components/card/_card.scss */
+/* line 181, src/scss/_components/card/_card.scss */
 .card__box-user-details span .icon-font {
   margin-right: 5px;
   color: #f9ac21;
   font-size: 11px;
 }
 
-/* line 180, src/scss/_components/card/_card.scss */
+/* line 189, src/scss/_components/card/_card.scss */
 .card__box-user-ava {
   overflow: hidden;
   position: relative;
@@ -661,7 +671,7 @@ picture {
           border-radius: 50%;
 }
 
-/* line 192, src/scss/_components/card/_card.scss */
+/* line 201, src/scss/_components/card/_card.scss */
 .card__box-user-btn {
   display: -webkit-box;
   display: -webkit-flex;
@@ -682,7 +692,7 @@ picture {
   background-color: #3759F0;
 }
 
-/* line 201, src/scss/_components/card/_card.scss */
+/* line 210, src/scss/_components/card/_card.scss */
 .card__box-user-btn span {
   position: relative;
   top: 2px;
@@ -694,12 +704,12 @@ picture {
   text-align: left;
 }
 
-/* line 214, src/scss/_components/card/_card.scss */
+/* line 223, src/scss/_components/card/_card.scss */
 .card__box-desc {
   padding-bottom: 25px;
 }
 
-/* line 217, src/scss/_components/card/_card.scss */
+/* line 226, src/scss/_components/card/_card.scss */
 .card__box-desc p {
   overflow: hidden;
   position: relative;
@@ -709,12 +719,18 @@ picture {
   line-height: 18px;
 }
 
-/* line 227, src/scss/_components/card/_card.scss */
+/* line 236, src/scss/_components/card/_card.scss */
 .card__box-link {
   font-family: 'AndaleMonoMTStd-Bold', sans-serif;
   font-size: 12px;
   color: #3554F9;
   line-height: 18px;
+}
+
+/* line 245, src/scss/_components/card/_card.scss */
+.card .swiper-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 /*# sourceMappingURL=maps/app.css.map */

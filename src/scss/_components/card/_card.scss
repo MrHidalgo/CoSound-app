@@ -1,8 +1,7 @@
 // SECTION :: START
 
 .card {
-	height: calc(100vh - (59px + 31px));
-	padding-bottom: 39px;
+	height: calc(100vh - 55px);
 
 	&__carousel {
 		overflow: hidden;
@@ -11,31 +10,40 @@
 		height: 100%;
 
 		&.is-touchMove {
-			&:after {
+			&:after,
+			&:before {
 				opacity: 1;
 				visibility: visible;
 				@include transition(opacity, visibility);
 			}
 		}
 
-		&:after {
-			opacity: 0;
-			visibility: hidden;
+		&:after,
+		&:before {
+			//opacity: 0;
+			//visibility: hidden;
 			content: '';
 			z-index: 10;
 			position: absolute;
 			left: -22px;
-			bottom: -(201px - 91px);
 			width: calc(100% + 44px);
-			height: 201px;
-			background-image: linear-gradient(180deg, rgba(25,25,25,0.00) 11%, #191919 43%);
+			height: 80px;
 			@include transition(opacity, visibility);
+		}
+
+		&:before {
+			top: -55px;
+			background-image: linear-gradient(360deg, rgba(25,25,25, 0) 0%, #191919 40%);
+		}
+
+		&:after {
+			bottom: -55px;
+			background-image: linear-gradient(180deg, rgba(25,25,25, 0) 0%, #191919 40%);
 		}
 	}
 
 	&__box {
 		overflow: hidden;
-		overflow-y: auto;
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -78,6 +86,7 @@
 					display: block;
 					max-width: 100%;
 					height: auto;
+					max-height: 100%;
 				}
 			}
 		}
@@ -233,8 +242,9 @@
 	}
 
 	.swiper {
-		&-slide {
-
+		&-container {
+			padding-top: 30px;
+			padding-bottom: 30px;
 		}
 	}
 }

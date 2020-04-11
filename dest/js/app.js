@@ -31,18 +31,20 @@ var initSwiper = function initSwiper() {
 		loop: false,
 		grabCursor: true,
 		freeMode: false,
-		speed: 800,
+		speed: 350,
 		effect: 'coverflow',
 		coverflowEffect: {
 			rotate: 0,
 			stretch: 80,
 			depth: 200,
 			modifier: 1,
-			slideShadows: false
+			slideShadows: true
 		},
 		centeredSlides: true,
+		centeredSlidesBounds: true,
+		centerInsufficientSlides: true,
 		slidesPerView: 'auto',
-		spaceBetween: 30,
+		spaceBetween: 100,
 		on: {
 			"touchMove": function touchMove() {
 				$(this.wrapperEl).closest('.card__carousel').addClass('is-touchMove');
@@ -64,8 +66,8 @@ var initSwiper = function initSwiper() {
  * ============================================= */
 	var footerBtnToggle = function footerBtnToggle() {
 		$('[footer-toggle-js]').on('click', function (ev) {
-			// $('[footer-toggle-js]').removeClass('is-active');
-			// $(ev.currentTarget).addClass('is-active');
+			$('[footer-toggle-js]').removeClass('is-active');
+			$(ev.currentTarget).addClass('is-active');
 		});
 	};
 	/*
@@ -87,6 +89,7 @@ var initSwiper = function initSwiper() {
 		// ==========================================
 
 		// callback
+		// fullViewHeight();
 		footerBtnToggle();
 		// ==========================================
 	};
