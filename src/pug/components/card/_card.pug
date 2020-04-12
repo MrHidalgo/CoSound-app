@@ -1,7 +1,10 @@
 // SECTION :: START
 
-mixin cardBox(classMod, title)
-	a.card__box(href="#" class!= 'card__box--' + classMod)
+mixin cardBox(idMod, classMod, title, userLevel)
+	a.card__box(href="#" card-js data-id!= idMod class!= 'card__box--' + classMod)
+		.card__box-heading
+			p.card__box-title!= title
+
 		.card__box-header(class!= 'card__box-header--' + classMod)
 			if(classMod === 'image')
 				img(src="img/img-card-image.png" srcset="img/img-card-image@2x.png 2x" alt="")
@@ -9,13 +12,34 @@ mixin cardBox(classMod, title)
 			if(classMod === 'audio')
 				img(src="img/img-card-audio.svg" alt="")
 
+		.card__box-audio-wrapper
+			div
+				.card__box-audio(card-play-js)
+					i.icon-font.icon-play
+					i.icon-font.icon-pause
+			div
+				#cardwave
+				.card__box-audio-duration
+				.card__box-audio-currentTime
+
 		.card__box-body
 			p.card__box-title!= title
 
 			.card__box-info
-				span London, UK
-				i
-				span 2h ago
+				.card__box-info-details
+					span London, UK
+					u
+					span 2h ago
+				.card__box-info-volume
+					span!= "Post Volume 120 <span card-volume-count-js></span>"
+
+					.card__box-volume(card-volume-js)
+						.card__box-volume-level.card__box-volume-level-1
+						.card__box-volume-level.card__box-volume-level-2
+						.card__box-volume-level.card__box-volume-level-3
+
+					.card__box-add
+						i.icon-font.icon-add-button
 
 			.card__box-user
 				div
@@ -25,33 +49,55 @@ mixin cardBox(classMod, title)
 								img(src="img/img-user.jpg" srcset='img/img-user@2x.jpg 2x' alt="")
 						div
 							p Keith Mills
-							span!= "<i class='icon-font icon-arrow-right'></i> Top Contributor"
+							if(userLevel === 'pro')
+								span!= "<i class='icon-font icon-corner-sq'></i><i class='icon-font icon-corner-sq'></i> Pro Contributor"
+							else
+								span!= "<i class='icon-font icon-corner-sq'></i> Top Contributor"
 				div
-					.card__box-user-btn
+					.card__box-user-btn.c-btn.c-btn--blue(card-btn-open-js)
 						span Open
+
+					.card__box-user-btn-group
+						.card__box-user-btn.c-btn.c-btn--white(card-btn-message-js)
+							span message
+						.card__box-user-btn.c-btn.c-btn--blue(card-btn-connect-js)
+							span connect
 
 			.card__box-desc
 				p A couple of people have told me that this mix is too muddy at the moment? Any pro-tips on how to change that? Any plugins I can use? I’m currently using Logic Pro for all my work. But really struggling to seperate out the bass sounds.
 
-			.card__box-link 15 comments
+			.card__box-link
+				p 15 comments
+				span
+					i.icon-font.icon-corner
+
+			form.card__box-form(action='' method='' autocomplete='off')
+				.card__box-form-field
+					textarea.card__box-form-textarea(name='')
+				.card__box-form-field
+					button.card__box-form-btn.c-btn.c-btn--blue(type='submit')
+						span comment
+
 
 section#card.card
 
 	.card__carousel
 		mixin swiperContent()
 			.swiper-slide
-				+cardBox('image', 'Finished track from the new studio')
+				+cardBox('1', 'image', 'Finished track from the new studio', 'pro')
 			.swiper-slide
-				+cardBox('audio', 'Looking for some feedback on a mix')
+				+cardBox('2', 'audio', 'Looking for some feedback on a mix', '')
 			.swiper-slide
-				+cardBox('image', 'Finished track from the new studio')
+				+cardBox('3', 'image', 'Finished track from the new studio', '')
 			.swiper-slide
-				+cardBox('audio', 'Looking for some feedback on a mix')
+				+cardBox('4', 'audio', 'Looking for some feedback on a mix', 'pro')
 			.swiper-slide
-				+cardBox('image', 'Finished track from the new studio')
+				+cardBox('5', 'image', 'Finished track from the new studio', '')
 			.swiper-slide
-				+cardBox('audio', 'Looking for some feedback on a mix')
+				+cardBox('6', 'audio', 'Looking for some feedback on a mix', 'pro')
 
 		+swiper('cardCarousel', 'swiperContent', false, false, false)
+
+		.card__preview(card-preview-js)
 
 // SECTION :: END

@@ -30,7 +30,7 @@
 	@if $filename == add-button {
 		$char: "\E001";
 	}
-	@if $filename == arrow-right {
+	@if $filename == arrow {
 		$char: "\E002";
 	}
 	@if $filename == bell {
@@ -39,11 +39,29 @@
 	@if $filename == copy {
 		$char: "\E004";
 	}
-	@if $filename == magnifying-glass {
+	@if $filename == corner-sq {
 		$char: "\E005";
 	}
-	@if $filename == user {
+	@if $filename == corner {
 		$char: "\E006";
+	}
+	@if $filename == heart-fill {
+		$char: "\E007";
+	}
+	@if $filename == heart {
+		$char: "\E008";
+	}
+	@if $filename == magnifying-glass {
+		$char: "\E009";
+	}
+	@if $filename == pause {
+		$char: "\E00A";
+	}
+	@if $filename == play {
+		$char: "\E00B";
+	}
+	@if $filename == user {
+		$char: "\E00C";
 	}
 
 	@return $char;
@@ -64,8 +82,8 @@
 	@include icon(add-button);
 
 }
-.icon-arrow-right {
-	@include icon(arrow-right);
+.icon-arrow {
+	@include icon(arrow);
 
 }
 .icon-bell {
@@ -76,8 +94,32 @@
 	@include icon(copy);
 
 }
+.icon-corner-sq {
+	@include icon(corner-sq);
+
+}
+.icon-corner {
+	@include icon(corner);
+
+}
+.icon-heart-fill {
+	@include icon(heart-fill);
+
+}
+.icon-heart {
+	@include icon(heart);
+
+}
 .icon-magnifying-glass {
 	@include icon(magnifying-glass);
+
+}
+.icon-pause {
+	@include icon(pause);
+
+}
+.icon-play {
+	@include icon(play);
 
 }
 .icon-user {

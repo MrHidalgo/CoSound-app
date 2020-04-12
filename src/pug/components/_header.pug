@@ -1,7 +1,28 @@
 // HEADER :: START
 
-header#header.header
-  .c-grid
-    .header__wrapper
+mixin headerContentCard()
+	.header__wrapper
+		.header__wrapper-left
+
+			a.header__back(href="#" card-back-js)
+				i.icon-font.icon-arrow
+
+		.header__wrapper-right
+
+			a.header__favorite(href="#" favorite-js)
+				i.icon-font.icon-heart
+				i.icon-font.icon-heart-fill
+
+mixin headerContent()
+	.header__wrapper
+
+
+if(pageClassName === 'p-card')
+	header#header.header.header--card
+		+headerContentCard()
+else
+	header#header.header
+		+headerContent()
+
 
 // HEADER :: END

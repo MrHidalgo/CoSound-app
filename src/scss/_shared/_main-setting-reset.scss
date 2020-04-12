@@ -3,8 +3,8 @@ body {
   width: 100%;
   min-height: 100vh;
 
+	&.is-card,
   &.is-hideScroll {
-    width: 100%;
     overflow: hidden !important;
   }
 }

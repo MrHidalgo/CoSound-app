@@ -1,5 +1,77 @@
 // HEADER :: START
 
-.header {}
+.header {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #191919;
+
+	&.header--card {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-100%);
+		@include transition(opacity, visibility, transform);
+
+		.is-card & {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+			@include transition(opacity, visibility, transform);
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 58px;
+
+		&-left,
+		&-right {
+			//width: 50%;
+		}
+	}
+
+	&__back {
+		color: $c-white;
+		font-size: 16px;
+	}
+
+	&__favorite {
+		position: relative;
+		width: 20px;
+		height: 20px;
+
+		&.is-active {
+			.icon-font {
+				&.icon-heart-fill {
+					opacity: 1;
+					visibility: visible;
+					transform: scale(1);
+					@include transition(opacity, visibility, transform);
+				}
+			}
+		}
+
+		.icon-font {
+			color: $c-white;
+			font-size: 20px;
+
+			&.icon-heart-fill {
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: scale(0);
+				@include transition(opacity, visibility, transform);
+			}
+		}
+	}
+}
 
 // HEADER :: END

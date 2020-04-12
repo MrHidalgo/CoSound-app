@@ -4,18 +4,18 @@
 // ==================================================
 // ==================================================
 
-$bth-width: 250px;
-$bth-height: 45px;
-$btn-border-width: 1px;
-$btn-border-color: rgba(#000, 1);
-$bth-border-radius: 5px;
-$bth-box-shadow: none;
-$bth-background-color: rgba(#000, 1);
-$bth-color: rgba(#fff, 1);
-$bth-font-size: rgba(#000, 1);
-$bth-font-weight: bold;
+//$bth-width: unset;
+$bth-height: 36px;
+//$btn-border-width: 1px;
+//$btn-border-color: rgba(#3759F0, 1);
+$bth-border-radius: 2em;
+//$bth-box-shadow: none;
+//$bth-background-color: rgba(#3759F0, 1);
+//$bth-color: rgba(#fff, 1);
+//$bth-font-size: 12px;
+//$bth-font-weight: bold;
 
-$btn-color--border: rgba(#000, 1);
+//$btn-color--border: rgba(#3759F0, 1);
 
 // ==================================================
 // ==================================================
@@ -27,32 +27,52 @@ $btn-color--border: rgba(#000, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: $bth-width;
+	//min-width: 85px;
+  //width: auto;
+  //max-width: $bth-width;
   height: $bth-height;
-  border: $btn-border-width solid $btn-border-color;
-  box-shadow: $bth-box-shadow;
+	padding-left: 18px;
+	padding-right: 18px;
+  border: none;
+  box-shadow: none;
   border-radius: $bth-border-radius;
-  color: $bth-color;
-  font-size: $bth-font-size;
-  font-weight: $bth-font-weight;
 
-  &--border {
-    background-color: transparent;
-    color: $btn-color--border;
-  }
+	span {
+		position: relative;
+		top: 2px;
+		text-transform: lowercase;
+		font-family: "AndaleMonoMTStd-Bold", sans-serif;
+		font-size: 12px;
+		letter-spacing: 0;
+	}
 
-  &--bg {
-    background-color: $bth-background-color;
-  }
+	&--blue {
+		background-color: #3759f0;
+		@include transition(background-color);
 
-  &__text {
-    &-wrap {}
-  }
+		&:active {
+			background-color: darken(#3759f0, 10%);
+			@include transition(background-color);
+		}
 
-  &__icon {
-    &-wrap {}
-  }
+		span {
+			color: #ffffff;
+		}
+	}
+
+	&--white {
+		background-color: #ffffff;
+		@include transition(background-color);
+
+		&:active {
+			background-color: darken(#ffffff, 10%);
+			@include transition(background-color);
+		}
+
+		span {
+			color: #191919;
+		}
+	}
 }
 
 // BUTTON :: END
