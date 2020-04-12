@@ -170,6 +170,61 @@ var initSwiper = function initSwiper() {
 			}
 		});
 	};
+
+	var slideToAction = function slideToAction() {
+		var xDown = null,
+		    yDown = null;
+
+		function handleTouchStart(evt) {
+			xDown = evt.touches[0].clientX;
+			yDown = evt.touches[0].clientY;
+		}
+
+		function handleTouchMove(evt) {
+
+			if (!xDown || !yDown) {
+				return;
+			}
+
+			var xUp = evt.touches[0].clientX,
+			    yUp = evt.touches[0].clientY,
+			    xDiff = xDown - xUp,
+			    yDiff = yDown - yUp;
+
+			if (Math.abs(xDiff) + Math.abs(yDiff) > 150) {
+
+				if (Math.abs(xDiff) > Math.abs(yDiff)) {
+					if (xDiff > 0) {
+						// left swipe
+					} else {
+						// right swipe
+						$('body, html').removeClass('is-card');
+
+						$('[card-preview-js]').find('[card-js]').remove();
+
+						waveSurferCard.empty();
+						waveSurferCard.destroy();
+					}
+				} else {
+					// if ( yDiff > 0 ) {
+					// // up swipe
+					// } else {
+					// // down swipe
+					// }
+				}
+
+				xDown = null;
+				yDown = null;
+			}
+		}
+
+		var _swipeNode = document.querySelector('[card-preview-js]');
+
+		if (_swipeNode) {
+			_swipeNode.addEventListener('touchstart', handleTouchStart, false);
+			_swipeNode.addEventListener('touchmove', handleTouchMove, false);
+		}
+	};
 	/*
  * CALLBACK :: end
  * ============================================= */
@@ -194,6 +249,7 @@ var initSwiper = function initSwiper() {
 		cardOpen();
 		cardBack();
 		cardVolume();
+		slideToAction();
 		// ==========================================
 	};
 	initNative();

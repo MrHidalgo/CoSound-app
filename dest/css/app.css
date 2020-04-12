@@ -1418,27 +1418,37 @@ picture {
   position: fixed;
   top: 58px;
   left: 0;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
   width: 100vw;
   height: -webkit-calc(100vh - (58px + 80px));
   height: calc(100vh - (58px + 80px));
   padding-left: 25px;
   padding-right: 25px;
   background-color: #191919;
-  -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-  -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 
-/* line 544, src/scss/_components/card/_card.scss */
+/* line 545, src/scss/_components/card/_card.scss */
 .is-card .card__preview {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-  -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 
-/* line 550, src/scss/_components/card/_card.scss */
+/* line 552, src/scss/_components/card/_card.scss */
 .card__preview .card__box {
   overflow: unset;
   padding-left: 0;
@@ -1446,17 +1456,17 @@ picture {
   border-color: transparent;
 }
 
-/* line 556, src/scss/_components/card/_card.scss */
+/* line 558, src/scss/_components/card/_card.scss */
 .card__preview .card__box-heading {
   display: block;
 }
 
-/* line 559, src/scss/_components/card/_card.scss */
+/* line 561, src/scss/_components/card/_card.scss */
 .card__preview .card__box-heading .card__box-title {
   display: block;
 }
 
-/* line 564, src/scss/_components/card/_card.scss */
+/* line 566, src/scss/_components/card/_card.scss */
 .card__preview .card__box-header {
   left: 0;
   width: 100%;
@@ -1467,17 +1477,17 @@ picture {
           border-radius: 15px;
 }
 
-/* line 573, src/scss/_components/card/_card.scss */
+/* line 575, src/scss/_components/card/_card.scss */
 .card__preview .card__box-header--image:after {
   display: none;
 }
 
-/* line 577, src/scss/_components/card/_card.scss */
+/* line 579, src/scss/_components/card/_card.scss */
 .card__preview .card__box-header--audio {
   display: none;
 }
 
-/* line 583, src/scss/_components/card/_card.scss */
+/* line 585, src/scss/_components/card/_card.scss */
 .card__preview .card__box-audio-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1485,12 +1495,12 @@ picture {
   display: flex;
 }
 
-/* line 588, src/scss/_components/card/_card.scss */
+/* line 590, src/scss/_components/card/_card.scss */
 .card__preview .card__box-title {
   display: none;
 }
 
-/* line 593, src/scss/_components/card/_card.scss */
+/* line 595, src/scss/_components/card/_card.scss */
 .card__preview .card__box-info-volume {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1498,13 +1508,13 @@ picture {
   display: flex;
 }
 
-/* line 601, src/scss/_components/card/_card.scss */
+/* line 603, src/scss/_components/card/_card.scss */
 .card__preview .card__box-user > div:nth-of-type(2) > .c-btn {
   display: none;
 }
 
 @media screen and (max-width: 424px) {
-  /* line 607, src/scss/_components/card/_card.scss */
+  /* line 609, src/scss/_components/card/_card.scss */
   .card__preview .card__box-user-details {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1515,7 +1525,7 @@ picture {
 }
 
 @media screen and (max-width: 424px) {
-  /* line 613, src/scss/_components/card/_card.scss */
+  /* line 615, src/scss/_components/card/_card.scss */
   .card__preview .card__box-user-details > div:nth-of-type(1) {
     padding-right: 0;
     padding-bottom: 5px;
@@ -1523,7 +1533,7 @@ picture {
 }
 
 @media screen and (max-width: 424px) {
-  /* line 619, src/scss/_components/card/_card.scss */
+  /* line 621, src/scss/_components/card/_card.scss */
   .card__preview .card__box-user-details > div:nth-of-type(2) {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1541,7 +1551,7 @@ picture {
   }
 }
 
-/* line 630, src/scss/_components/card/_card.scss */
+/* line 632, src/scss/_components/card/_card.scss */
 .card__preview .card__box-user-btn-group {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1549,13 +1559,13 @@ picture {
   display: flex;
 }
 
-/* line 637, src/scss/_components/card/_card.scss */
+/* line 639, src/scss/_components/card/_card.scss */
 .card__preview .card__box-desc p {
   overflow: unset;
   max-height: unset;
 }
 
-/* line 644, src/scss/_components/card/_card.scss */
+/* line 646, src/scss/_components/card/_card.scss */
 .card__preview .card__box-link span {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1563,7 +1573,7 @@ picture {
   display: flex;
 }
 
-/* line 649, src/scss/_components/card/_card.scss */
+/* line 651, src/scss/_components/card/_card.scss */
 .card__preview .card__box-form {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1571,7 +1581,7 @@ picture {
   display: flex;
 }
 
-/* line 656, src/scss/_components/card/_card.scss */
+/* line 658, src/scss/_components/card/_card.scss */
 .card .swiper-container {
   padding-top: 30px;
   padding-bottom: 30px;

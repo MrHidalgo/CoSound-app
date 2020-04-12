@@ -534,17 +534,19 @@
 		position: fixed;
 		top: 58px;
 		left: 0;
+		transform: translateX(100%);
 		width: 100vw;
 		height: calc(100vh - (58px + 80px));
 		padding-left: 25px;
 		padding-right: 25px;
 		background-color: #191919;
-		@include transition(opacity, visibility);
+		@include transition(opacity, visibility, transform);
 
 		.is-card & {
 			opacity: 1;
 			visibility: visible;
-			@include transition(opacity, visibility);
+			transform: translateX(0);
+			@include transition(opacity, visibility, transform);
 		}
 
 		.card__box {
